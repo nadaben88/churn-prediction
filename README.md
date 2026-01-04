@@ -76,7 +76,7 @@ python src/gradio_demo.py
 ```
 ### Project Structure:
 ```bash
-mlops-churn/
+mlops-churn-pipeline/
 ├── config.yaml                # Configuration file
 ├── environment.yml             # Conda environment
 ├── data/
