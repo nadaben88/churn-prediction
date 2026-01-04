@@ -8,6 +8,9 @@
 
 ## Overview
 This project is an end-to-end MLOps pipeline for predicting customer churn in the telecom industry, achieving 85% recall and 89.5% AUC-ROC using a hyperparameter-tuned XGBoost model. The solution enables the company to proactively identify customers at high risk of churn and support targeted retention actions, helping improve customer experience and reduce revenue loss associated with churn.The pipeline covers data preprocessing, model training, automated testing, inference utilities, and an interactive Gradio demo for real-time predictions and stakeholder validation. It is designed to be reproducible, scalable, and production-ready, with plans to extend it with API deployment, Docker containerization, and monitoring in the future.
+<img width="1350" height="649" alt="image" src="https://github.com/user-attachments/assets/d98ec3d7-acbc-45fd-bd19-759e8ba9d563" />
+
+
 ## Model Performance
 The XGBoost model achieved the following performance metrics on the test set:
    Metric      | Score       |
