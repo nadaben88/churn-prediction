@@ -1,0 +1,16 @@
+[
+  "tests/test_predict.py::test_format_results",
+  "tests/test_predict.py::test_normalize_input_to_df",
+  "tests/test_predict.py::test_normalize_input_to_df_batch",
+  "tests/test_predict.py::test_predict_batch",
+  "tests/test_predict.py::test_predict_missing_features",
+  "tests/test_predict.py::test_predict_return_df",
+  "tests/test_predict.py::test_predict_single",
+  "tests/test_preprocess.py::test_build_preprocessor",
+  "tests/test_preprocess.py::test_clean_data",
+  "tests/test_preprocess.py::test_load_raw_data",
+  "tests/test_preprocess.py::test_map_gender",
+  "tests/test_preprocess.py::test_map_yes_no",
+  "tests/test_preprocess.py::test_preprocess_data",
+  "tests/test_preprocess.py::test_save_preprocessor"
+]

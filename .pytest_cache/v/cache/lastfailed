@@ -1,0 +1,7 @@
+{
+  "tests/test_preprocess.py::test_load_raw_data": true,
+  "tests/test_preprocess.py::test_save_preprocessor": true,
+  "tests/test_preprocess.py::test_preprocess_data": true,
+  "tests/test_predict.py::test_predict_batch": true,
+  "tests/test_predict.py::test_predict_return_df": true
+}

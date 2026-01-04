@@ -1,0 +1,28 @@
+# Created by pytest automatically.
+# -----------------------------
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+env/
+.venv/
+ENV/
+.env
+
+# Logs
+*.log
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Data and models (do not push large files)
+data/
+models/
+checkpoints/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+

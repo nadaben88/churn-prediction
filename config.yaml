@@ -1,0 +1,93 @@
+# MLOps Churn Prediction Pipeline Configuration
+
+# Data paths
+data:
+  raw: "data/raw/telco-customer-churn.csv"
+  processed: "data/processed/processed_data.csv"
+  train: "data/train/train_data.csv"
+  test: "data/test/test_data.csv"
+  features:
+    - "gender"
+    - "SeniorCitizen"
+    - "Partner"
+    - "Dependents"
+    - "tenure"
+    - "PhoneService"
+    - "MultipleLines"
+    - "InternetService"
+    - "OnlineSecurity"
+    - "OnlineBackup"
+    - "DeviceProtection"
+    - "TechSupport"
+    - "StreamingTV"
+    - "StreamingMovies"
+    - "Contract"
+    - "PaperlessBilling"
+    - "PaymentMethod"
+    - "MonthlyCharges"
+    - "TotalCharges"
+
+# Preprocessing
+preprocessing:
+  target_column: "Churn"
+  binary_categorical_columns:
+    - "Partner"
+    - "Dependents"
+    - "PhoneService"
+    - "PaperlessBilling"
+  nominal_categorical_columns:
+    - "SeniorCitizen"
+    - "MultipleLines"
+    - "InternetService"
+    - "OnlineSecurity"
+    - "OnlineBackup"
+    - "DeviceProtection"
+    - "TechSupport"
+    - "StreamingTV"
+    - "StreamingMovies"
+    - "Contract"
+    - "PaymentMethod"
+  numerical_columns:
+    - "tenure"
+    - "MonthlyCharges"
+    - "TotalCharges"
+  drop_columns:
+    - "customerID"
+  encoding: "onehot"  
+  scaling: "standard"  
+
+
+# Model training
+training:
+  model_type: "XGBoost"
+  train_size: 0.6
+  val_size: 0.2
+  test_size: 0.2
+  random_state: 42
+  split_random_state: 42
+  hyperparameters:
+    XGBoost:
+
+      n_estimators: 100
+      learning_rate: 0.1
+      max_depth: 6
+      subsample: 0.8
+      colsample_bytree: 0.8
+      objective: "binary:logistic"
+      eval_metric: "logloss"
+      random_state: 42
+
+# Model artifacts
+artifacts:
+  version: "1.0.0"  
+  model_dir: "artifacts"
+  model_name: "churn_model.joblib"
+  preprocessor_name: "preprocessor.joblib"
+
+
+logging:
+  log_file: "logs/app.log"
+  level: "INFO"
+  format: "%(asctime)s - %(levelname)s - %(message)s"
+
+
