@@ -89,12 +89,17 @@ mlops-churn-pipeline/
 │   ├── preprocess.py          # Data preprocessing
 │   ├── train.py                # Model training
 │   ├── predict.py              # Inference utilities
-│   ├── gradio_demo.py          # Gradio demo
 │   └── utils.py                # Utility functions
+    └── eval.py                 #evaluation metrics
 ├── tests/
 │   ├── test_preprocess.py      # Preprocessing tests
 │   └── test_predict.py         # Inference tests
 ├── logs/                       # Log files
+├── gradio_demo.py              # Gradio demo
+├── setup.py
+├── eda_modeling.ipynb          #first notebook
+├── Figures
+├── requirements.txt
 ```                 
 ### Future Improvements
 The following features are planned for future development:
