@@ -7,9 +7,7 @@
 ---
 
 ## Overview
-This project is an end-to-end MLOps pipeline for predicting customer churn in the telecom industry, achieving 85% recall and 89.5% AUC-ROC using a hyperparameter-tuned XGBoost model. The solution enables the company to proactively identify customers at high risk of churn and support targeted retention actions, helping improve customer experience and reduce revenue loss associated with churn.
-
-The pipeline covers data preprocessing, model training, automated testing, inference utilities, and an interactive Gradio demo for real-time predictions and stakeholder validation. It is designed to be reproducible, scalable, and production-ready, supporting reliable deployment and integration into operational decision-making workflows.
+This project is an end-to-end MLOps pipeline for predicting customer churn in the telecom industry, achieving 85% recall and 89.5% AUC-ROC using a hyperparameter-tuned XGBoost model. The solution enables the company to proactively identify customers at high risk of churn and support targeted retention actions, helping improve customer experience and reduce revenue loss associated with churn.The pipeline covers data preprocessing, model training, automated testing, inference utilities, and an interactive Gradio demo for real-time predictions and stakeholder validation. It is designed to be reproducible, scalable, and production-ready, supporting reliable deployment and integration into operational decision-making workflows.
 ---
 
 ## Architecture
@@ -31,5 +29,10 @@ The pipeline consists of the following components:
 
 ### Step 1: Clone the Repository
 ```bash
-git clone <>
-cd mlops-churn
+git clone https://github.com/nadaben88/churn-prediction.git
+cd churn-prediction
+### Step 2: Create the Conda Environment
+
+
+
+
