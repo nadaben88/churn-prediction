@@ -61,7 +61,6 @@ def load_metadata_from_disk(config: Dict) -> Optional[Dict]:
 def init_artifacts(config_path: str = "config.yaml"):
     """
     Initialize module-level artifacts by loading config, model, preprocessor and metadata.
-    This should be called once at API startup (e.g., FastAPI startup event).
     """
     global GLOBAL_CONFIG, GLOBAL_MODEL, GLOBAL_PREPROCESSOR, GLOBAL_METADATA
 
@@ -82,11 +81,7 @@ def _normalize_input_to_df(
     """
     Convert input payload (dict, list of dicts, or DataFrame) to a DataFrame
     and ensure columns match the expected feature list from config.
-    Does not apply model preprocessor; just prepares raw dataframe.
-
-    - Fills missing expected features with NaN
-    - Coerces numeric columns to numeric dtype (safe coercion)
-    - Reorders columns to expected order
+    
     """
     # Convert to DataFrame
     if isinstance(input_data, pd.DataFrame):
@@ -159,25 +154,7 @@ def predict(
 ) -> Union[Dict, List[Dict], pd.DataFrame]:
     """
     Run inference for single or batch inputs.
-
-    Parameters
-    ----------
-    input_data : dict | list[dict] | pd.DataFrame
-        Incoming raw features (not yet transformed).
-    config : dict, optional
-        If not provided, the module-level GLOBAL_CONFIG must be initialized via init_artifacts().
-    model : optional
-        Optional model object (sklearn-like) to use. If not provided, GLOBAL_MODEL must be set.
-    preprocessor : optional
-        Optional preprocessor object (scikit-learn transformer). If not provided, GLOBAL_PREPROCESSOR must be set.
-    return_df : bool
-        If True, return a pandas.DataFrame with inputs + predictions. Otherwise, return list/dict.
-
-    Returns
-    -------
-    If input was a single record (dict) and return_df False -> dict
-    If input was a batch (list or DataFrame) and return_df False -> list[dict]
-    If return_df True -> pandas.DataFrame (indexed same as processed df)
+    
     """
     # Resolve config and artifacts
     cfg = config or GLOBAL_CONFIG
@@ -251,10 +228,10 @@ def predict(
     return output_records
 
 
-# Example main for local debugging (do not use this in production API)
+# Example main for local debugging
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
-    # Example usage: must ensure config.yaml is present and artifacts exist
+    # Example usage
     try:
         init_artifacts("config.yaml")
     except Exception as exc:
